@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * tableau_vis module adds a field for Tableau visualizations.
+ *
+ * @file
+ */
+
+/**
+ * Get Tableau trusted ticket
+ */
+function tableau_viz_get_trusted_ticket() {
+  $config = \Drupal::service('config.factory')->getEditable('tableau_visualization.settings');
+  // Get tableau server from tableau_viz_settings_form
+  $server = !empty($config->get('tableau_server')) ? $config->get('tableau_server') : '';
+  // Get tableau user from tableau_viz_settings_form
+  $username = !empty($config->get('tableau_user')) ? $config->get('tableau_user') : '';
+  // Get target site name from tableau_viz_settings_form
+  $target_site = !empty($config->get('tableau_target_site')) ? $config->get('tableau_target_site') : '';
+  // Data to send to Tableau server
+  $data = array('username' => $username, 'target_site' => $target_site);
+  // Initialize cURL session
+  $ch = curl_init($server);
+
+  // Use POST method
+  curl_setopt($ch, CURLOPT_POST, TRUE);
+  // Post data
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+  // Return ticket variable
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+  // Execute cURL and return ticket
+  print curl_exec($ch);
+  // Close cURL session
+  curl_close($ch);
+}

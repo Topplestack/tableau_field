@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Install, update, and uninstall functions for the tableau_viz module.
+ *
+ * @file
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function tableau_vis_uninstall() {
+  $config = \Drupal::service('config.factory')
+    ->getEditable('tableau_visualization.settings');
+  if (!empty($config)) {
+    try {
+      $config->delete();
+    }
+    catch (\Exception $exception) {
+      watchdog_exception('tableau_vis', $exception);
+    }
+  }
+}

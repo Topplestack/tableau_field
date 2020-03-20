@@ -1,0 +1,20 @@
+{
+  "name": "drupal/tableau_vis",
+  "description": "tableau_vis add a tableau visualization field.",
+  "type": "drupal-module",
+  "homepage": "https://github.com/bestfriends/tableau_vis",
+  "authors": [
+    {
+      "name": "Chris Allen",
+      "email": "chris.allen2006@gmail.com",
+      "role": "Consultant/Developer"
+    },
+    {
+      "name": "Jesse Taylor",
+      "email": "jesset@bestfriends.org",
+      "role": "Maintainer/Developer"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev"
+}

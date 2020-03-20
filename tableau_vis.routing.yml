@@ -1,0 +1,27 @@
+tableau_vis.tableau_visualization_settings_form:
+  path: '/admin/config/media/tableau_vis'
+  defaults:
+    _form: '\Drupal\tableau_vis\Form\TableauVisualizationSettingsForm'
+    _title: 'Tableau Visualization Settings'
+  requirements:
+    _permission: 'administer tableau_vis'
+
+tableau_vis.tableau_visualization_ticket:
+  path: '/tableau-vizualization/ticket'
+  defaults:
+    _controller: '\Drupal\tableau_vis\Controller\TableauVisualizationTicketController::tableauVisualizationGetTrustedTicket'
+    _title: 'Tableau visualization ticket'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: 'TRUE'
+
+tableau_vis.tableau_visualization_check_url:
+  path: '/tableau-vizualization/url-check'
+  defaults:
+    _controller: '\Drupal\tableau_vis\Controller\TableauVisualizationCheckUrlController::tableauVisualizationCheckUrl'
+    _title: 'Tableau visualization check url'
+  requirements:
+    _access: 'TRUE'
+
+

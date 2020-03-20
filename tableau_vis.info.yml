@@ -1,0 +1,5 @@
+name: Tableau Visualization Field
+type: module
+description: 'Provides a field and account information for displaying protected Tableau visualizations'
+package: Fields
+core: 8.x

@@ -1,0 +1,5 @@
+tableau_vis.tableau_visualization_settings:
+  title: 'Tableau Visualization Settings'
+  route_name: tableau_vis.tableau_visualization_settings_form
+  description: 'Manage tableau visualization settings.'
+  parent: system.admin_config_media
